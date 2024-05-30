@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Вычисление объёма куба</h1>
+<form method="POST">
+    {% csrf_token %}
+    <div style="display:inline-block">
+        <label> Длина стороны куба</label>
+        <input type="number" min="0" name="square_side" value="{{square_side}}">
+    </div>
+    <div style="display:inline-block">
+        <label> Объём куба</label>
+        <input type="number" disabled name="square_volume" value="{{result}}">
+    </div>
+    <div style="display:inline-block">
+        <button type="submit">Выполнить</button>
+        <button type="submit" name="reset"> Очистить</button>
+    </div>
+</form>
+
+</body>
+</html>
