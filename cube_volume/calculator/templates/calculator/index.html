@@ -1,0 +1,22 @@
+<!-- calculator/templates/calculator/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Вычисление объёма куба</title>
+</head>
+<body>
+    <h1>Вычисление объёма куба</h1>
+    <form action="{% url 'calculate' %}" method="post">
+        {% csrf_token %}
+        <label for="side">Длина стороны куба:</label>
+        <input type="number" id="side" name="side" step="0.01" required value="{{ side|default_if_none:'' }}">
+        <br><br>
+        <label for="volume">Объём куба:</label>
+        <input type="number" id="volume" name="volume" step="0.01" value="{{ volume|default_if_none:'' }}" readonly>
+        <br><br>
+        <button type="submit">Вычислить</button>
+        <button type="reset">Очистить</button>
+    </form>
+</body>
+</html>
